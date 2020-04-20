@@ -63,10 +63,8 @@ public class GameBuilder {
     private Color getColor(char character) {
         switch (character) {
         case 'b':
-        case 'B':
             return Color.WHITE;
         case 'n':
-        case 'N':
             return Color.BLACK;
         default:
             return null;
