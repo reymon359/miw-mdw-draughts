@@ -2,20 +2,26 @@ package es.urjccode.mastercloudapps.adcs.draughts.models;
 
 public class Draught extends Piece {
 
-  Draught(Color color) {
-    super(color);
-  }
+    Draught(Color color) {
+        super(color);
+    }
 
-  @Override
-  Error isCorrectDiagonalMovement(int amountBetweenDiagonalPieces, int pair, Coordinate... coordinates) {
-    if (amountBetweenDiagonalPieces > 1)
-      return Error.TOO_MUCH_EATINGS;
-    return null;
-  }
+    @Override
+    Error isCorrectDiagonalMovement(int amountBetweenDiagonalPieces, int pair, Coordinate... coordinates) {
+        if (amountBetweenDiagonalPieces > 1)
+            return Error.TOO_MUCH_EATINGS;
 
-  @Override
-  public String getCode(){
-		return super.getCode().toUpperCase();
-  }
+        if (coordinates[pair].getDiagonalDistance(coordinates[pair + 1]) == 2) {
+            if (amountBetweenDiagonalPieces != 1)
+                return Error.MISSED_EATING;
+        }
+
+        return null;
+    }
+
+    @Override
+    public String getCode() {
+        return super.getCode().toUpperCase();
+    }
 
 }
