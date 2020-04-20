@@ -25,7 +25,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
         setGame(Color.WHITE,
             "        ",
             "        ",
-            " N      ",
+            " n      ",
             "        ",
             "        ",
             "        ",
@@ -46,7 +46,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "        ",
-            "  B     ");
+            "  b     ");
         assertErrorMove(Error.OPPOSITE_PIECE,
             new Coordinate(7, 2),
             new Coordinate(6, 3));
@@ -60,7 +60,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "        ",
-            "  B     ",
+            "  b     ",
             "        ",
             "        ");
         assertErrorMove(Error.NOT_DIAGONAL,
@@ -76,7 +76,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "        ",
-            "  B     ",
+            "  b     ",
             "        ",
             "        ");
         assertErrorMove(Error.NOT_DIAGONAL,
@@ -87,7 +87,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     @Test
     public void testGivenGameWhenMoveRightThenNOT_DIAGONAL() {
         setGame(Color.BLACK,
-            " N      ",
+            " n      ",
             "        ",
             "        ",
             "        ",
@@ -103,7 +103,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     @Test
     public void testGivenGameWhenMoveLeftThenNOT_DIAGONAL() {
         setGame(Color.BLACK,
-            " N      ",
+            " n      ",
             "        ",
             "        ",
             "        ",
@@ -122,7 +122,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "        ",
-            "      N ",
+            "      n ",
             "       b",
             "        ",
             "        ",
@@ -135,7 +135,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     @Test
     public void testGivenGameWhenMoveBLACKThenNOT_EMPTY_TARGET() {
         setGame(Color.BLACK,
-            " N      ",
+            " n      ",
             "n       ",
             "        ",
             "        ",
@@ -155,11 +155,11 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "  n     ",
-            "   B    ",
+            "   b    ",
             "        ",
             "        ",
             "        ");
-        assertErrorMove(Error.MISSED_EATING,
+        assertErrorMove(Error.WITHOUT_EATING,
             new Coordinate(4, 3),
             new Coordinate(2, 5));
     }
@@ -170,12 +170,12 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "        ",
-            "  N     ",
+            "  n     ",
             " b      ",
             "  b     ",
             "        ",
             "        ");
-        assertErrorMove(Error.MISSED_EATING,
+        assertErrorMove(Error.WITHOUT_EATING,
             new Coordinate(3, 2),
             new Coordinate(5, 4));
     }
@@ -188,7 +188,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "   n    ",
             "  n     ",
-            " B      ",
+            " b      ",
             "        ",
             "        ",
             "        ");
@@ -203,7 +203,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "        ",
-            "N       ",
+            "n       ",
             " b      ",
             "  b     ",
             "        ",
@@ -221,7 +221,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "   n    ",
-            "  B     ",
+            "  b     ",
             "        ",
             "        ");
         assertErrorMove(Error.NOT_DIAGONAL,
@@ -236,7 +236,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "        ",
-            "    N   ",
+            "    n   ",
             "   b    ",
             "        ",
             "        ",
@@ -253,7 +253,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "        ",
-            "    N   ",
+            "    n   ",
             "   b    ",
             "        ",
             "        ",
@@ -271,7 +271,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "    n   ",
-            "   B    ",
+            "   b    ",
             "        ",
             "        ",
             "        ");
@@ -291,7 +291,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "   n    ",
             "        ",
             " n      ",
-            "B       ");
+            "b       ");
         assertErrorMove(Error.NOT_EMPTY_TARGET,
             new Coordinate(7, 0),
             new Coordinate(5, 2),
@@ -302,7 +302,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
     public void testGivenGameWhenMoveBLACKSecondThenNOT_EMPTY_TARGET(){
         setGame(Color.BLACK,
             "        ",
-            "  N     ",
+            "  n     ",
             "   b    ",
             "        ",
             "   b    ",
@@ -324,7 +324,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "     b  ",
-            "      B ",
+            "      b ",
             "        ",
             "        ");
         assertErrorMove(Error.COLLEAGUE_EATING,
@@ -340,7 +340,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "   n    ",
             "        ",
             "        ",
-            "      N ",
+            "      n ",
             "        ",
             "        ");
         assertErrorMove(Error.COLLEAGUE_EATING,
@@ -348,37 +348,6 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             new Coordinate(0, 1));
     }
 
-    @Test
-    public void testGivenGameWhenMoveWHITEEatingThenTOO_MUCH_EATINGS(){
-        setGame(Color.WHITE,
-            "        ",
-            "        ",
-            "   n    ",
-            "        ",
-            "     n  ",
-            "      B ",
-            "        ",
-            "        ");
-        assertErrorMove(Error.TOO_MUCH_EATINGS,
-            new Coordinate(5, 6),
-            new Coordinate(0, 1));
-    }
-
-    @Test
-    public void testGivenGameWhenMoveBLACKEatingThenTOO_MUCH_EATINGS(){
-        setGame(Color.BLACK,
-            "        ",
-            "        ",
-            "   b    ",
-            "        ",
-            "     b  ",
-            "      N ",
-            "        ",
-            "        ");
-        assertErrorMove(Error.TOO_MUCH_EATINGS,
-            new Coordinate(5, 6),
-            new Coordinate(0, 1));
-    }
 
     @Test
     public void testGivenGameWhenMoveWHITEThenTOO_MUCH_JUMPS() {
@@ -387,7 +356,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "        ",
-            " B      ",
+            " b      ",
             "        ",
             "        ",
             "        ");
@@ -402,7 +371,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
         setGame(Color.BLACK,
             "        ",
             "        ",
-            "   N    ",
+            "   n    ",
             "        ",
             "        ",
             "        ",
@@ -421,7 +390,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "  n     ",
-            " B      ",
+            " b      ",
             "        ",
             "        ",
             "        ");
@@ -439,10 +408,10 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ",
             "        ",
             "     n  ",
-            "      B ",
+            "      b ",
             "        ",
             "        ");
-        assertErrorMove(Error.TOO_MUCH_JUMPS,
+        assertErrorMove(Error.TOO_MUCH_ADVANCED,
             new Coordinate(5, 6),
             new Coordinate(3, 4),
             new Coordinate(0, 1));
