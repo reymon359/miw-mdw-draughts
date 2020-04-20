@@ -161,7 +161,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ");
         assertErrorMove(Error.MISSED_EATING,
             new Coordinate(4, 3),
-            new Coordinate(3, 4));
+            new Coordinate(2, 5));
     }
 
     @Test
@@ -177,7 +177,7 @@ public class IncorrectMovesDraughtGameTest extends GameTest {
             "        ");
         assertErrorMove(Error.MISSED_EATING,
             new Coordinate(3, 2),
-            new Coordinate(4, 3));
+            new Coordinate(5, 4));
     }
 
 
